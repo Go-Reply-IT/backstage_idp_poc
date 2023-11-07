@@ -1,0 +1,4 @@
+region: europe-west8
+ip_cidr_range: 10.0.0.32/29
+description: ""
+enable_private_access: true

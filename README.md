@@ -1,1 +1,1 @@
-# backstage_idp_poc
+# POC Backstage IDP - Infrastructure

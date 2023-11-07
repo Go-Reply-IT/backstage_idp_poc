@@ -1,0 +1,38 @@
+ingress:
+  ingress-deny-all:
+    deny: true
+    description: Deny all ingress traffic.
+    priority: 65535
+    enable_logging:
+      include_metadata: true
+    rules:
+      - protocol: all
+        ports: []
+
+  ingress-allow-iap:
+    deny: false
+    description: Allow ingress from iap.
+    source_ranges:
+      - 35.235.240.0/20
+    targets: []
+    priority: 1000
+    rules:
+      - protocol: tcp
+        ports:
+          - 22
+          - 443
+
+  # ingress-allow-health-checks:
+  #   deny: false
+  #   description: Allow ingress from ilb hc.
+  #   source_ranges:
+  #     - 35.191.0.0/16
+  #     - 130.211.0.0/22
+  #   use_service_accounts: true
+  #   targets:
+  #     - bccsi-hub-elk-proxy-sa@go-play-bcc-elk-service.iam.gserviceaccount.com
+  #   priority: 1000
+  #   rules:
+  #     - protocol: tcp
+  #       ports:
+  #         - 22

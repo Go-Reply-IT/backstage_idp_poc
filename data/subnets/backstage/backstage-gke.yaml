@@ -1,0 +1,5 @@
+region: europe-west8
+ip_cidr_range: 10.0.0.0/28
+secondary_ip_ranges:
+  pods: 192.168.0.0/24
+  services: 192.168.1.0/26
